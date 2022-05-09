@@ -1,0 +1,95 @@
+{%if section.settings.show_social == true%}
+<div class="follow_us_sections">  
+  <div class="folow-us">
+    {{ section.settings.heading }}
+  </div>
+   <ul class="footer__list-social list-unstyled list-social" role="list">
+       {%- if section.settings.facebook != blank -%}
+              <li class="list-social__item">
+                <a href="{{ section.settings.facebook }}" class="link list-social__link" >
+                  {%- render 'icon-facebook' -%}
+                  <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
+                </a>
+              </li>
+            {%- endif -%}
+          {%- if section.settings.twitter != blank -%}
+              <li class="list-social__item">
+                <a href="{{ section.settings.twitter }}" class="link list-social__link" >
+                  {%- render 'icon-twitter' -%}
+                  <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
+                </a>
+              </li>
+            {%- endif -%}
+          {%- if section.settings.linkdin != blank -%}
+              <li class="list-social__item">
+                <a href="{{ section.settings.linkdin }}" class="link list-social__link" >
+                  {%render 'icon-linkdin'%}
+                </a>
+              </li>
+            {%- endif -%}
+         {%- if section.settings.instagram != blank -%}
+              <li class="list-social__item">
+                <a href="{{ section.settings.instagram }}" class="link list-social__link" >
+                  {%- render 'icon-instagram' -%}
+                  <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+                </a>
+              </li>
+            {%- endif -%}
+  </ul>
+</div>
+{%endif%}
+
+<!-- Welcome section ends -->
+{% schema %}
+{
+"name": "Follow Us",
+"settings": [
+  {
+      "type": "checkbox",
+      "id": "show_social",
+      "default": false,
+      "label": "Enable Follow Up Section"
+    },
+{
+"id": "heading",
+"type": "text",
+"label": "Heading"
+},
+{
+"id": "facebook",
+"type": "text",
+"label": "Facebook",
+"info":"https://www.facebook.com/"
+},
+{
+"id": "twitter",
+"type": "text",
+"label": "Twitter",
+"info":"https://twitter.com/"
+},
+{
+"id": "linkdin",
+"type": "text",
+"label": "Linkdin",
+"info":"https://www.linkedin.com/"
+},
+{
+"id": "instagram",
+"type": "text",
+"label": "Instagram",
+"info":"http://instagram.com/",
+"default":"http://instagram.com"
+}
+],
+"presets": [
+{
+"name": "Follow Us",
+"category": "ADVANCED LAYOUT"
+}
+]
+}
+{% endschema %}
+{% stylesheet %}
+{% endstylesheet %}
+{% javascript %}
+{% endjavascript %}
